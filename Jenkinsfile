@@ -19,7 +19,7 @@ pipeline {
         }
         stage('Run Image') {
             steps {
-                sh 'docker run -d  -p 9191:9191 --name flask_container moredatta574/flask_jenkins'
+                sh 'docker run -d  -p 9191:9090 --name flask_container moredatta574/flask_jenkins'
             }
         }
         
