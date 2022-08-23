@@ -3,7 +3,7 @@ pipeline {
         label 'XYZ'
         }
     environment {
-		DOCKERHUB_CREDENTIALS = credentials('DockerHub')
+		DOCKERHUB_CREDENTIALS = credentials('docker')
 	}
     stages {
         stage('Login') {
@@ -16,12 +16,12 @@ pipeline {
 		}
         stage('Build Image') {
             steps {
-                sh 'sudo docker build -t desaiakshay92/flask_jenkins .'
+                sh 'sudo docker build -t moredatta574/flask_jenkins .'
             }
         }
         stage('Run Image') {
             steps {
-                sh 'sudo docker run -d --name flask_container desaiakshay92/flask_jenkis'
+                sh 'sudo docker run -d --name flask_container moredatta574/flask_jenkis'
             }
         }
         
